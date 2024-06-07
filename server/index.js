@@ -29,6 +29,11 @@ app.use("/kpi", kpiRoutes);
 app.use("/product", productRoutes);
 app.use("/transaction", transactionRoutes);
 
+/* HEALTH CHECK ENDPOINT */
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 8080;
 mongoose
